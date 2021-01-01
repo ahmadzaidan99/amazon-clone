@@ -1,5 +1,6 @@
 export const initialState = {
   basket: [],
+  user: null,
 };
 
 export const getBasketTotal = (basket) =>
@@ -27,6 +28,12 @@ const reducer = (state, action) => {
           `Cant remove product (id: ${action.id}) as its not in basket!`
         );
       }
+
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
 
       return {
         ...state,
