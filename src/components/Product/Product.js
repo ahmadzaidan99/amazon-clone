@@ -17,7 +17,7 @@ function Product({ id, title, image, price, rating }) {
     });
   };
   return (
-    <div className="product">
+    <div className="product grow">
       <div className="prodcut__info">
         <p>{title}</p>
         <p className="prodcut__price">

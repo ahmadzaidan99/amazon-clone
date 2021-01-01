@@ -12,6 +12,13 @@
   z-index: 1;
 }
 
+.grow {
+  transition: all 0.3s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.05);
+}
+
 .product__rating {
   display: flex;
 }
