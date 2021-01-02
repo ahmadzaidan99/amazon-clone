@@ -21,6 +21,7 @@
 
 .product__rating {
   display: flex;
+  color: #f0c14b;
 }
 
 .product > img {
