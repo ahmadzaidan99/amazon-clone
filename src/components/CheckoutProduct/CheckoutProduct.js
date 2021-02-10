@@ -5,8 +5,8 @@ import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
 import StarOutlineIcon from "@material-ui/icons/StarBorder";
 
-function CheckoutProduct({ id, image, title, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
+function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
+  const [dispatch] = useStateValue();
   let halfRating = (rating - Math.floor(rating)) * 10;
   let outline = 0;
   const removeFromBasket = () => {
@@ -17,7 +17,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
   };
   return (
     <div className="checkoutProduct">
-      <img className="checkoutProduct__image" src={image} />
+      <img className="checkoutProduct__image" src={image} alt="" />
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__tile">{title}</p>
         <p className="checkoutProduct__price">
@@ -37,7 +37,9 @@ function CheckoutProduct({ id, image, title, price, rating }) {
                 .map((_, index) => <StarOutlineIcon key={index} />)
             : ""}
         </div>
-        <button onClick={removeFromBasket}>Remove from basket</button>
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from Basket</button>
+        )}
       </div>
     </div>
   );
